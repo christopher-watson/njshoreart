@@ -8,36 +8,62 @@ import { Nav } from '../../components/nav'
 const Post = ({ post }) => {
   console.log(post);
 
-  const { mainImage, title, desc, categories } = post;
+  // const { mainImage, title, desc, categories } = post;
   const [imageUrl, setImageUrl] = useState('');
+  const [postComponents, setPostComponents] = useState({})
+
+  // useEffect(() => {
+  //   if(post){
+  //     const imageBuilder = imageUrlBuilder({
+  //       projectId: 'zskt9act',
+  //       dataset: 'production'
+  //     })
+  
+  //     setImageUrl(imageBuilder.image(mainImage));
+  //   }
+  // }, [post]);
 
   useEffect(() => {
-    const imageBuilder = imageUrlBuilder({
-      projectId: 'zskt9act',
-      dataset: 'production'
-    })
-
-    setImageUrl(imageBuilder.image(mainImage));
-  }, [mainImage]);
+    if(post){
+      setPostComponents({
+        mainImage: post.mainImage,
+        title: post.title,
+        desc: post.desc,
+        categories: post.categories
+      })
+      const imageBuilder = imageUrlBuilder({
+        projectId: 'zskt9act',
+        dataset: 'production'
+      })
+      setImageUrl(imageBuilder.image(post.mainImage));
+    }
+  },[post])
 
   return (
     <div className='postContainer'>
-      <Nav title={title}/>
-      <div className={styles.main}>
-        <h1>{title}</h1>
-        { imageUrl && 
-          <img className={styles.mainImage} src={imageUrl} alt={title || 'njshoreart'}
-          loading="lazy"/> 
-        }
-        <p className={styles.description}>
-          {desc}
-        </p>
-        {categories && (
-        <ul>
-          {categories.map(category => <div key={category}>#{category}</div>)}
-        </ul>
-      )}
-      </div>
+      {postComponents.title ? 
+        <div>
+          <Nav title={postComponents.title}/>
+          <div className={styles.main}>
+            <h1>{postComponents.title}</h1>
+            { imageUrl && 
+              <img className={styles.mainImage} src={imageUrl} alt={postComponents.title || 'njshoreart'}
+              loading="lazy"/> 
+            }
+            <p className={styles.description}>
+              {postComponents.desc}
+            </p>
+            {postComponents.categories && (
+            <ul>
+              {postComponents.categories.map(category => <div key={category}>#{category}</div>)}
+            </ul>
+          )}
+          </div>
+        </div> : <div>
+          <Nav />
+          No Posts Yet
+        </div>
+      }
     </div>
   )
 }

@@ -7,7 +7,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import { useState, useEffect } from 'react'
 
 const Index = ({ posts }) => {
-  console.log(posts);
+  // console.log(posts);
 
   const [mappedPosts, setMappedPosts] = useState([]);
 
@@ -31,28 +31,42 @@ const Index = ({ posts }) => {
     }
   }, [posts]);
 
+
   return (
     <div className={styles.container}>
       <Nav title="Home" />
       <main className={styles.main}>
         <h1>NJ Shore Art</h1>
-        {mappedPosts.length ? mappedPosts.map(({ title = '', slug = '', desc = '', mainImage = '' }, index) => (
+        {mappedPosts.length ? mappedPosts.map(({ title = '', slug = '', desc = '', mainImage = '', categories = '' }, index) => (
           <div key={index} className={styles.postStyle}>
             <Link href="/post/[slug]" as={`/post/${slug.current}`}>
-              <div>{title}</div>
+              <div>
+                {title}
+                <img className={''} src={mainImage} alt={title || 'njshoreart'} loading="lazy" />
+                {desc}
+                <div className={styles.categoryStyle}>
+                  {categories.map((category) => <div key={category}>#{category}</div>)}
+                </div>
+              </div>
             </Link>
-            <img className={''} src={mainImage} alt={title || 'njshoreart'}
-              loading="lazy" />
-            <div>{desc}</div>
           </div>
-        )) : <>No Posts Yet</>}
+        )) : <div>
+          <Nav />
+          No Posts Yet
+        </div>}
       </main>
     </div>
   )
 }
 
 export async function getStaticProps() {
-  const posts = await client.fetch(groq`*[_type == "post"]`)
+  const posts = await client.fetch(groq`*[_type == "post"] | order(publishedAt asc){
+    title,
+    slug,
+    desc,
+    mainImage,
+    "categories": categories[]->title
+  }`)
   return {
     props: {
       posts

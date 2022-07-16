@@ -12,7 +12,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'CLICK GENERATE HERE (if you change it, make sure there are dashes in between words.. NO SPACES)',
+      description: 'CLICK GENERATE (if you change it, make sure there are dashes in between words.. NO SPACES)',
       options: {
         source: 'title',
         maxLength: 96,
@@ -36,13 +36,8 @@ export default {
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{ type: 'reference', to: { type: 'category' } }],
     },
-    // {
-    //   name: 'publishedAt',
-    //   title: 'Published at',
-    //   type: 'datetime',
-    // },
     {
       name: 'desc',
       title: 'Description',
@@ -50,25 +45,43 @@ export default {
       description: 'Make it catchy',
       // validation: Rule => Rule.max(120).warning(`A title shouldn't be more than 120 characters.`)
     },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+    },
     // {
     //   name: 'body',
     //   title: 'Body',
     //   type: 'blockContent',
     // },
   ],
-
+  orderings: [
+    {
+      title: 'Publish Date',
+      name: 'publishDateAsc',
+      by: [
+        { field: 'publishedAt', direction: 'asc' }
+      ]
+    },
+  ],
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
       media: 'mainImage',
+      subtitle: 'publishedAt',
     },
     prepare(selection) {
-      const {author} = selection
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      })
-    },
-  },
+      const { title, media, subtitle } = selection;
+      const date = new Date(subtitle).toString().split('GMT')[0];
+      // console.log(new Date(subtitle))
+      return {
+        title: title,
+        media: media,
+        subtitle: date, 
+      }
+    }
+
+  }
 }
 
