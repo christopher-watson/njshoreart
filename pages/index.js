@@ -31,7 +31,6 @@ const Index = ({ posts }) => {
     }
   }, [posts]);
 
-
   return (
     <div className={styles.container}>
       <Nav title="Home" />
