@@ -1,8 +1,17 @@
-.container {
-  display: grid;
-  padding: 2rem;
+.homeContainer {
+   display: grid;
+   grid-template-areas:
+      "nav"
+      "body";
 }
 
-.main {
+.homeMain {
+   display: grid;
+   grid-template-areas:
+      "heading"
+      "mappedPosts";
+}
 
+.innerPost {
+   
 }

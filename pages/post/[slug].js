@@ -1,5 +1,6 @@
 import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect } from 'react';
+import Link from 'next/link'
 import groq from 'groq'
 import styles from '../../styles/Post.module.css';
 import client from '../../client';
@@ -55,7 +56,11 @@ const Post = ({ post }) => {
             </p>
             {postComponents.categories && (
             <ul>
-              {postComponents.categories.map(category => <div key={category}>#{category}</div>)}
+              {postComponents.categories.map(category => (
+                  <Link href="/category/[slug]" as={`/category/${category}`}>
+                     <a key={category}>#{category}</a>
+                  </Link>
+              ))}
             </ul>
           )}
           </div>

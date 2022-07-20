@@ -1,0 +1,27 @@
+.navContainer {
+   grid-area: 'nav';
+   display: grid;
+   padding: 25px 50px;
+   border: 1px solid red;
+   border-radius: 15px;
+   background: grey;
+   grid-template-areas: "shoreIcon navIcons";
+   color: var(--white);
+   font-weight: 600;
+}
+
+.navContainer a {
+   padding: 0 10px;
+}
+
+.navContainer svg {
+   height: 1em;
+}
+
+.shoreIcon {
+
+}
+
+.navIcons {
+   text-align: right;
+}
