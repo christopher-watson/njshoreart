@@ -1,0 +1,52 @@
+.categoryContainer {
+   display: grid;
+   width: 100%;
+}
+
+.categoryContainer h1 {
+   text-align: center;
+}
+
+.categoryMain {
+   display: grid;
+   align-items: center;
+   grid-template-columns: repeat(auto-fit, minmax(400px, .3fr));
+   margin: 0 100px;
+   justify-content: center;
+}
+
+.categoryPost {
+   display: grid;
+   /* grid-template-rows: 10px, 100px, 10px, 10px; */
+   grid-template-areas: 
+      "title"
+      "img"
+      "desc"
+      "tags";
+   justify-content: center;
+   text-align: center;
+   line-height: 2.5em;
+   background-image: url('../public/images/njshorebg2.png');
+   background-size: cover;
+   border: 5px solid var(--brandBlue);
+   border-radius: 25px;
+   margin: 10px;
+   padding: 10px 0;
+}
+
+.categoryPost img {
+   max-width: 270px;
+   max-height: 250px;
+}
+
+.categoryPost img:hover {
+   opacity: .8;
+}
+
+.categoryStyle a{
+   padding: 0 8px;
+}
+
+.categoryStyle a:hover{
+   text-decoration: underline;
+}

@@ -34,19 +34,19 @@ const Category = ({ posts, slug }) => {
    return (
       <div className={styles.categoryContainer}>
          <Nav title={slug} />
-         <main className={styles.main}>
-            <h1>Art Collection | #{slug}</h1>
+         <h1>Art Collection | #{slug}</h1>
+         <main>
             {mappedPosts.length ?
-               <div>
+               <div className={styles.categoryMain}>
                   {mappedPosts.filter(mPost => mPost.categories.includes(slug)).map(({ title = '', slug = '', desc = '', mainImage = '', categories = '' }, index) => (
-                     <div key={index} className={styles.postStyle}>
+                     <div key={index} className={styles.categoryPost}>
+                        <h2>{title}</h2>
                         <Link href="/post/[slug]" as={`/post/${slug.current}`}>
                            <a>
-                              {title}
                               <img className={''} src={mainImage} alt={title || 'njshoreart'} loading="lazy" />
-                              {desc}
                            </a>
                         </Link>
+                        {desc}
                         <div className={styles.categoryStyle}>
                            {categories.map((category) => (
                               <Link href="/category/[slug]" as={`/category/${category}`}>

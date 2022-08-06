@@ -41,11 +41,11 @@ const Post = ({ post }) => {
   },[post])
 
   return (
-    <div className='postContainer'>
+    <div className={styles.postContainer}>
       {postComponents.title ? 
         <div>
           <Nav title={postComponents.title}/>
-          <div className={styles.main}>
+          <div className={styles.post}>
             <h1>{postComponents.title}</h1>
             { imageUrl && 
               <img className={styles.mainImage} src={imageUrl} alt={postComponents.title || 'njshoreart'}
@@ -55,13 +55,13 @@ const Post = ({ post }) => {
               {postComponents.desc}
             </p>
             {postComponents.categories && (
-            <ul>
+            <div className={styles.categoryStyle}>
               {postComponents.categories.map(category => (
-                  <Link href="/category/[slug]" as={`/category/${category}`}>
-                     <a key={category}>#{category}</a>
+                  <Link href="/category/[slug]" as={`/category/${category}`} key={category}>
+                     <a>#{category}</a>
                   </Link>
               ))}
-            </ul>
+            </div>
           )}
           </div>
         </div> : <div>
@@ -76,6 +76,7 @@ const Post = ({ post }) => {
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   mainImage,
+  desc,
   "categories": categories[]->title
 }`
 

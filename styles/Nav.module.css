@@ -2,26 +2,46 @@
    grid-area: 'nav';
    display: grid;
    padding: 25px 50px;
-   border: 1px solid red;
    border-radius: 15px;
-   background: grey;
-   grid-template-areas: "shoreIcon navIcons";
+   background-image: url('../public/images/njshorebg.png');
+   background-size: cover;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-areas: "shoreIcon logo navIcons";
    color: var(--white);
    font-weight: 600;
+   font-size: 1.4em;
 }
 
 .navContainer a {
    padding: 0 10px;
 }
 
-.navContainer svg {
-   height: 1em;
+.shoreIcon {
+   display: flex;
+   align-items: center;
 }
 
-.shoreIcon {
+.shoreLogo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
+.shoreLogo a {
+   display: flex;
+   max-width: 170px;
+}
+
+.shoreLogo img{
+   border-radius: 50%;
 }
 
 .navIcons {
-   text-align: right;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.shoreIcon a:hover, .navIcons a:hover {
+   text-decoration: underline;
 }

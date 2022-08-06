@@ -1,9 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Nav.module.css';
 import Head from 'next/head'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouseChimney } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram, faVenmo } from '@fortawesome/free-brands-svg-icons'
+import logo from '../public/images/njshorelogo.png'
 
 export const Nav = (props) => {
 
@@ -18,7 +17,15 @@ export const Nav = (props) => {
             <Link href='/'>
                <a>
                   NJ Shore Art
-                  {/* <FontAwesomeIcon icon={faHouseChimney} /> */}
+               </a>
+            </Link>
+         </div>
+         <div className={styles.shoreLogo}>
+            <Link href='/'>
+               <a>
+                  <Image
+                     src={logo}
+                  />
                </a>
             </Link>
          </div>
@@ -26,21 +33,18 @@ export const Nav = (props) => {
             <Link href='/'>
                <a>
                   Home
-                  {/* <FontAwesomeIcon icon={faHouseChimney} /> */}
                </a>
             </Link>
             |
             <Link href="https://instagram.com/njshoreart">
                <a target="_blank" rel="noopener noreferrer">
                   Instagram
-                  {/* <FontAwesomeIcon icon={faInstagram} /> */}
                </a>
             </Link>
             |
             <Link href="https://instagram.com/njshoreart">
                <a target="_blank" rel="noopener noreferrer">
                   Venmo
-                  {/* <FontAwesomeIcon icon={faVenmo} /> */}
                </a>
             </Link>
          </div>

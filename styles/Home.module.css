@@ -1,17 +1,51 @@
 .homeContainer {
    display: grid;
-   grid-template-areas:
-      "nav"
-      "body";
+   width: 100%;
+}
+
+.homeContainer h1 {
+   text-align: center;
 }
 
 .homeMain {
    display: grid;
-   grid-template-areas:
-      "heading"
-      "mappedPosts";
+   align-items: center;
+   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+   margin: 0 100px;
 }
 
 .innerPost {
-   
+   display: grid;
+   /* grid-template-rows: 10px, 100px, 10px, 10px; */
+   grid-template-areas: 
+   "title"
+   "img"
+   "desc"
+   "tags";
+   justify-content: center;
+   text-align: center;
+   line-height: 2.5em;
+   background-image: url('../public/images/njshorebg2.png');
+   background-size: cover;
+   border: 5px solid var(--brandBlue);
+   border-radius: 25px;
+   margin: 10px;
+   padding: 10px 0;
+}
+
+.innerPost img {
+   max-width: 270px;
+   max-height: 250px;
+}
+
+.innerPost img:hover {
+   opacity: .8;
+}
+
+.categoryStyle a{
+   padding: 0 8px;
+}
+
+.categoryStyle a:hover{
+   text-decoration: underline;
 }

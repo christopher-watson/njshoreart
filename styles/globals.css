@@ -1,5 +1,6 @@
 :root {
    --white: #F4F4F9;
+   --brandBlue: #77cddd
  }
 
 
@@ -22,7 +23,10 @@ a {
 }
 
 #__next {
-  display: grid;
+  display: flex;
   padding: 2rem;
+  max-width: 1900px;
+  /* justify-content: center; */
+  margin: 0 auto;
 }
 

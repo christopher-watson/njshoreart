@@ -1,0 +1,33 @@
+.postContainer{
+   display: grid;
+   width: 100%;
+}
+
+.post {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   background: center / contain url('../public/images/njshorelogo2.png');
+   border: 5px solid var(--brandBlue);
+   border-radius: 25px;
+   flex-direction: column;
+   width: 50%;
+   margin: 50px auto;
+   padding: 20px;
+   color: var(--white);
+   font-weight: bold;
+   font-size: 1.2em;
+}
+
+.post img {
+   width: 400px;
+}
+
+.categoryStyle a{
+   padding: 0 8px;
+}
+
+.categoryStyle a:hover{
+   text-decoration: underline;
+}
