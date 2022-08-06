@@ -27,6 +27,7 @@
    line-height: 2.5em;
    background-image: url('../public/images/njshorebg2.png');
    background-size: cover;
+   background-color: var(--white);
    border: 5px solid var(--brandBlue);
    border-radius: 25px;
    margin: 10px;
