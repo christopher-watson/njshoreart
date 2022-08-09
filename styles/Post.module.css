@@ -31,3 +31,22 @@
 .categoryStyle a:hover{
    text-decoration: underline;
 }
+
+.description {
+   padding: 20px 0;
+}
+
+.description p {
+   margin: 0;
+   text-align: left;
+   background: var(--whiteOpaque);
+   padding: 0 50px;
+}
+
+.description p:first-child{
+   border-radius: 15px 15px 0 0;
+}
+
+.description p:last-child{
+   border-radius: 0 0 15px 15px;
+}

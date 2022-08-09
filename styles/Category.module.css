@@ -51,3 +51,13 @@
 .categoryStyle a:hover{
    text-decoration: underline;
 }
+
+.description {
+   border-top: 3px dotted var(--brandBlue);
+   border-bottom: 3px dotted var(--brandBlue);
+}
+
+.description p {
+   margin: 0;
+   text-align: left;
+}

@@ -43,6 +43,16 @@
    opacity: .8;
 }
 
+.description {
+   border-top: 3px dotted var(--brandBlue);
+   border-bottom: 3px dotted var(--brandBlue);
+}
+
+.innerPost p {
+   margin: 0;
+   text-align: left;
+}
+
 .categoryStyle a{
    padding: 0 8px;
 }

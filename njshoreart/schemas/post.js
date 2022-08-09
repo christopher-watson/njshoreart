@@ -39,9 +39,11 @@ export default {
       of: [{ type: 'reference', to: { type: 'category' } }],
     },
     {
-      name: 'desc',
+      name: 'description',
       title: 'Description',
-      type: 'string',
+      // of: [{type: 'block'}],
+      // type: 'array',
+      type: 'blockContent',
       description: 'Make it catchy',
       // validation: Rule => Rule.max(120).warning(`A title shouldn't be more than 120 characters.`)
     },

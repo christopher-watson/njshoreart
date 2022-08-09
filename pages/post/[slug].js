@@ -1,4 +1,5 @@
 import imageUrlBuilder from '@sanity/image-url';
+import BlockContent from '@sanity/block-content-to-react'
 import { useState, useEffect } from 'react';
 import Link from 'next/link'
 import groq from 'groq'
@@ -7,7 +8,7 @@ import client from '../../client';
 import { Nav } from '../../components/nav'
 
 const Post = ({ post }) => {
-  console.log(post);
+//   console.log(post);
 
   // const { mainImage, title, desc, categories } = post;
   const [imageUrl, setImageUrl] = useState('');
@@ -29,7 +30,7 @@ const Post = ({ post }) => {
       setPostComponents({
         mainImage: post.mainImage,
         title: post.title,
-        desc: post.desc,
+        description: post.description,
         categories: post.categories
       })
       const imageBuilder = imageUrlBuilder({
@@ -51,9 +52,9 @@ const Post = ({ post }) => {
               <img className={styles.mainImage} src={imageUrl} alt={postComponents.title || 'njshoreart'}
               loading="lazy"/> 
             }
-            <p className={styles.description}>
-              {postComponents.desc}
-            </p>
+            <div className={styles.description}>
+               <BlockContent blocks={postComponents.description} />
+            </div>
             {postComponents.categories && (
             <div className={styles.categoryStyle}>
               {postComponents.categories.map(category => (
@@ -76,7 +77,7 @@ const Post = ({ post }) => {
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   mainImage,
-  desc,
+  description,
   "categories": categories[]->title
 }`
 
