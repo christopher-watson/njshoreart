@@ -86,3 +86,4 @@ export default Index
 
 // todo
 // update venmo link - https://venmo.com/Jason-Price-5
+// favicon
