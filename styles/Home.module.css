@@ -16,13 +16,11 @@
 
 .innerPost {
    display: grid;
-   /* grid-template-rows: 10px, 100px, 10px, 10px; */
    grid-template-areas: 
-   "title"
-   "img"
-   "desc"
-   "tags";
-   justify-content: center;
+      "title"
+      "img"
+      "desc"
+      "tags";
    text-align: center;
    line-height: 2.5em;
    background-image: url('../public/images/njshorebg2.png');
@@ -35,8 +33,8 @@
 }
 
 .innerPost img {
-   max-width: 270px;
-   max-height: 250px;
+   max-width: 280px;
+   /* max-height: 250px; */
 }
 
 .innerPost img:hover {
@@ -44,13 +42,20 @@
 }
 
 .description {
+   display: flex;
+   justify-content: center;
+}
+
+.innerDescription {
+   width: 80%;
    border-top: 3px dotted var(--brandBlue);
    border-bottom: 3px dotted var(--brandBlue);
+   background-color: var(--white);
 }
 
 .innerPost p {
    margin: 0;
-   text-align: left;
+   text-align: center;
 }
 
 .categoryStyle a{

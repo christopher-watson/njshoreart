@@ -46,14 +46,17 @@ const Index = ({ posts }) => {
                      </a>
                   </Link>
                   <div className={styles.description}>
-                     <BlockContent blocks={description} />
+                     <BlockContent className={styles.innerDescription} blocks={description} />
                   </div>
                   <div className={styles.categoryStyle}>
-                     {categories.map((category) => (
-                        <Link href="/category/[slug]" as={`/category/${category}`} key={category}>
-                           <a>#{category}</a>
-                        </Link>
-                     ))}
+                     {categories ? (
+                        categories.map((category) => (
+                           <Link href="/category/[slug]" as={`/category/${category}`} key={category}>
+                              <a>#{category}</a>
+                           </Link>
+                        ))) : (
+                        <><br></br></>
+                      )}
                   </div>
                </div>
             )) : <div>

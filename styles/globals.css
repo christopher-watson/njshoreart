@@ -1,5 +1,6 @@
 :root {
    --white: #F4F4F9;
+   --black: #212121;
    --brandBlue: #77cddd;
    --tanBg: #facfa59e;
    --whiteOpaque: #f4f4f466;
@@ -28,7 +29,6 @@ a {
   display: flex;
   padding: 2rem;
   max-width: 1900px;
-  /* justify-content: center; */
   margin: 0 auto;
 }
 

@@ -41,37 +41,39 @@ const Post = ({ post }) => {
     }
   },[post])
 
-  return (
-    <div className={styles.postContainer}>
-      {postComponents.title ? 
-        <div>
-          <Nav title={postComponents.title}/>
-          <div className={styles.post}>
-            <h1>{postComponents.title}</h1>
-            { imageUrl && 
-              <img className={styles.mainImage} src={imageUrl} alt={postComponents.title || 'njshoreart'}
-              loading="lazy"/> 
-            }
-            <div className={styles.description}>
-               <BlockContent blocks={postComponents.description} />
+   return (
+      <div className={styles.postContainer}>
+         {postComponents.title ?
+            <div>
+               <Nav title={postComponents.title} />
+               <div className={styles.post}>
+                  <div className={styles.innerPost}>
+                     <h1>{postComponents.title}</h1>
+                     {imageUrl &&
+                        <img className={styles.mainImage} src={imageUrl} alt={postComponents.title || 'njshoreart'}
+                           loading="lazy" />
+                     }
+                     <div className={styles.description}>
+                        <BlockContent blocks={postComponents.description} />
+                     </div>
+                     {postComponents.categories && (
+                        <div className={styles.categoryStyle}>
+                           {postComponents.categories.map(category => (
+                              <Link href="/category/[slug]" as={`/category/${category}`} key={category}>
+                                 <a>#{category}</a>
+                              </Link>
+                           ))}
+                        </div>
+                     )}
+                  </div>
+               </div>
+            </div> : <div>
+               <Nav />
+               No Posts Yet
             </div>
-            {postComponents.categories && (
-            <div className={styles.categoryStyle}>
-              {postComponents.categories.map(category => (
-                  <Link href="/category/[slug]" as={`/category/${category}`} key={category}>
-                     <a>#{category}</a>
-                  </Link>
-              ))}
-            </div>
-          )}
-          </div>
-        </div> : <div>
-          <Nav />
-          No Posts Yet
-        </div>
-      }
-    </div>
-  )
+         }
+      </div>
+   )
 }
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
