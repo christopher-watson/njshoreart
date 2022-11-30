@@ -48,7 +48,7 @@ const Category = ({ posts, slug }) => {
                            </a>
                         </Link>
                         <div className={styles.description}>
-                           <BlockContent blocks={description} />
+                           <BlockContent className={styles.innerDescription} blocks={description} />
                         </div>
                         <div className={styles.categoryStyle}>
                            {categories.map((category) => (

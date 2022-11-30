@@ -28,6 +28,11 @@
    color: var(--brandBlue);
 }
 
+.innerPost h1 {
+   font-family: 'Caveat', cursive;
+   font-size: 3em;
+}
+
 .post img {
    width: 400px;
 }
@@ -49,7 +54,7 @@
    text-align: center;
    color: var(--brandBlue);
    background-color: var(--white);
-   padding: 0 50px;
+   padding: 10px 50px;
 }
 
 .description p:first-child{
