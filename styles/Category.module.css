@@ -17,7 +17,6 @@
 
 .categoryPost {
    display: grid;
-   /* grid-template-rows: 10px, 100px, 10px, 10px; */
    grid-template-areas: 
       "title"
       "img"
@@ -25,7 +24,7 @@
       "tags";
    justify-content: center;
    text-align: center;
-   line-height: 2.5em;
+   line-height: 1.2em;
    background-color: var(--white);
    background-image: url('../public/images/njshorebg2.png');
    background-size: cover;
@@ -35,9 +34,13 @@
    padding: 10px 0;
 }
 
+.categoryPost h2 {
+   font-family: 'Caveat', cursive;
+   font-size: 2em;
+}
+
 .categoryPost img {
-   max-width: 270px;
-   max-height: 250px;
+   width: 400px;
 }
 
 .categoryPost img:hover {
@@ -53,11 +56,38 @@
 }
 
 .description {
-   border-top: 3px dotted var(--brandBlue);
-   border-bottom: 3px dotted var(--brandBlue);
+   display: flex;
+   justify-content: center;
 }
 
-.description p {
-   margin: 0;
-   text-align: left;
+.innerDescription {
+   width: 80%;
+   border-top: 3px dotted var(--brandBlue);
+   border-bottom: 3px dotted var(--brandBlue);
+   background-color: var(--white);
+   /* font-weight: bold; */
+   margin: 10px 0;
+}
+
+.categoryStyle {
+   padding: 5px 0;
+}
+
+.categoryStyle a{
+   padding: 0 8px;
+}
+
+.categoryStyle a:hover{
+   text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+   .categoryMain {
+      grid-template-columns: 1fr;
+      margin: 0;
+   }
+
+   .categoryPost img {
+      width: 80vw;
+   }
 }

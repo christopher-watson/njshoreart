@@ -10,22 +10,22 @@ import { Nav } from '../../components/nav'
 const Category = ({ posts, slug }) => {
    // console.log(posts);
    const [mappedPosts, setMappedPosts] = useState([]);
-
+   
    useEffect(() => {
       if (posts) {
          const imageBuilder = imageUrlBuilder({
             projectId: 'zskt9act',
             dataset: 'production'
          });
+         // const filteredArray = posts.filter(p => p.categories !== null);
          setMappedPosts(
-            posts.map(p => {
+            posts.filter(p => p.categories !== null).map(p => {
                return {
                   ...p,
                   mainImage: imageBuilder.image(p.mainImage),
                }
             })
          )
-         console.log(mappedPosts)
       } else {
          setMappedPosts([]);
       }
@@ -37,7 +37,7 @@ const Category = ({ posts, slug }) => {
          <Nav title={slug} />
          <h1>Art Collection | #{slug}</h1>
          <main>
-            {mappedPosts.length ?
+            {mappedPosts ?
                <div className={styles.categoryMain}>
                   {mappedPosts.filter(mPost => mPost.categories.includes(slug)).map(({ title = '', slug = '', description = '', mainImage = '', categories = '' }, index) => (
                      <div key={index} className={styles.categoryPost}>
@@ -48,7 +48,7 @@ const Category = ({ posts, slug }) => {
                            </a>
                         </Link>
                         <div className={styles.description}>
-                           <BlockContent blocks={description} />
+                           <BlockContent className={styles.innerDescription} blocks={description} />
                         </div>
                         <div className={styles.categoryStyle}>
                            {categories.map((category) => (

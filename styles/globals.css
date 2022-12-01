@@ -11,7 +11,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
    background: var(--tanBg);
 }
@@ -32,3 +32,8 @@ a {
   margin: 0 auto;
 }
 
+@media (max-width: 900px) {
+   #__next {
+     padding: 1.2rem;
+   }
+}

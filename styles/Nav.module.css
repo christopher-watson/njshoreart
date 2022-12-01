@@ -9,7 +9,8 @@
    grid-template-areas: "shoreIcon logo navIcons";
    color: var(--white);
    font-weight: 600;
-   font-size: 1.4em;
+   font-size: 2em;
+   font-family: 'Indie Flower', cursive;
 }
 
 .navContainer a {
@@ -45,3 +46,29 @@
 .shoreIcon a:hover, .navIcons a:hover {
    text-decoration: underline;
 }
+
+@media (max-width: 950px) {
+   .navContainer {
+      padding: 15px 0;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+         "logo" 
+         "navIcons";
+      font-size: 1.5em;
+   }
+   
+   .shoreIcon {
+      display: none;
+      justify-content: center;
+   }
+   
+   .shoreLogo a {
+      max-width: 150px;
+   }
+   
+   .navIcons {
+      justify-content: center;
+   }
+
+ }
+ 

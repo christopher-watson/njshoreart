@@ -22,7 +22,7 @@
       "desc"
       "tags";
    text-align: center;
-   line-height: 2.5em;
+   /* line-height: 2.5em; */
    background-image: url('../public/images/njshorebg2.png');
    background-size: cover;
    background-color: var(--white);
@@ -30,6 +30,11 @@
    border-radius: 25px;
    margin: 10px;
    padding: 10px 0;
+}
+
+.innerPost h2 {
+   font-family: 'Caveat', cursive;
+   font-size: 2.3em;
 }
 
 .innerPost img {
@@ -51,11 +56,18 @@
    border-top: 3px dotted var(--brandBlue);
    border-bottom: 3px dotted var(--brandBlue);
    background-color: var(--white);
+   margin: 10px 0;
 }
 
 .innerPost p {
    margin: 0;
    text-align: center;
+   /* font-weight: bold; */
+   margin: 10px 0;
+}
+
+.categoryStyle {
+   padding: 5px 0;
 }
 
 .categoryStyle a{
@@ -64,4 +76,11 @@
 
 .categoryStyle a:hover{
    text-decoration: underline;
+}
+
+@media (max-width: 900px) {   
+   .homeMain {
+      grid-template-columns: 1fr;
+      margin: 0;
+   }
 }
