@@ -37,6 +37,7 @@
 .categoryPost h2 {
    font-family: 'Caveat', cursive;
    font-size: 2em;
+   padding: 0 10px;
 }
 
 .categoryPost img {
