@@ -18,7 +18,7 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.14.2",
+    "@netlify/plugin-nextjs": "^4.26.0",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0"
   }
