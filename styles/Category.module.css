@@ -40,7 +40,7 @@
 }
 
 .categoryPost img {
-   width: 400px;
+   width: 90%;
 }
 
 .categoryPost img:hover {
@@ -85,9 +85,5 @@
    .categoryMain {
       grid-template-columns: 1fr;
       margin: 0;
-   }
-
-   .categoryPost img {
-      width: 80vw;
    }
 }
