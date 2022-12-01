@@ -46,3 +46,29 @@
 .shoreIcon a:hover, .navIcons a:hover {
    text-decoration: underline;
 }
+
+@media (max-width: 950px) {
+   .navContainer {
+      padding: 15px 0;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+         "logo" 
+         "navIcons";
+      font-size: 1.5em;
+   }
+   
+   .shoreIcon {
+      display: none;
+      justify-content: center;
+   }
+   
+   .shoreLogo a {
+      max-width: 150px;
+   }
+   
+   .navIcons {
+      justify-content: center;
+   }
+
+ }
+ 

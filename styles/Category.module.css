@@ -17,7 +17,6 @@
 
 .categoryPost {
    display: grid;
-   /* grid-template-rows: 10px, 100px, 10px, 10px; */
    grid-template-areas: 
       "title"
       "img"
@@ -80,4 +79,15 @@
 
 .categoryStyle a:hover{
    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+   .categoryMain {
+      grid-template-columns: 1fr;
+      margin: 0;
+   }
+
+   .categoryPost img {
+      width: 80vw;
+   }
 }

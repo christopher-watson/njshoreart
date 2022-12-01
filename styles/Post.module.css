@@ -26,6 +26,7 @@
    background-image: url('../public/images/njshorebg2.png');
    border-radius: 25px;
    color: var(--brandBlue);
+   padding-bottom: 20px;
 }
 
 .innerPost h1 {
@@ -63,4 +64,36 @@
 
 .description p:last-child{
    border-radius: 0 0 15px 15px;
+}
+
+@media (max-width: 900px) {
+   .post {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 5px solid var(--brandBlue);
+      background: center / contain url('../public/images/njshorelogo2.png');
+      border-radius: 25px;
+      flex-direction: column;
+      width: 50%;
+      padding: 20px;
+      color: var(--white);
+      font-weight: bold;
+      font-size: 1.2em;
+      position: relative;
+
+      width: 100%;
+      margin: 20px 0;
+      padding: 0;
+      background: none;
+   }
+   
+   .innerPost {
+      padding-bottom: 20px;
+   }
+   
+   .post img {
+      width: 80vw;
+   }
 }

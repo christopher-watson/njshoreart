@@ -32,3 +32,8 @@ a {
   margin: 0 auto;
 }
 
+@media (max-width: 900px) {
+   #__next {
+     padding: 1.2rem;
+   }
+}
