@@ -35,6 +35,7 @@
 .innerPost h2 {
    font-family: 'Caveat', cursive;
    font-size: 2.3em;
+   padding: 0 10px;
 }
 
 .innerPost img {
