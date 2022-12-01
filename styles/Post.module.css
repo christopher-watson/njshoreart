@@ -27,6 +27,7 @@
    border-radius: 25px;
    color: var(--brandBlue);
    padding-bottom: 20px;
+   background-size: 250%;
 }
 
 .innerPost h1 {
@@ -67,22 +68,7 @@
 }
 
 @media (max-width: 900px) {
-   .post {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      border: 5px solid var(--brandBlue);
-      background: center / contain url('../public/images/njshorelogo2.png');
-      border-radius: 25px;
-      flex-direction: column;
-      width: 50%;
-      padding: 20px;
-      color: var(--white);
-      font-weight: bold;
-      font-size: 1.2em;
-      position: relative;
-
+   .post {      
       width: 100%;
       margin: 20px 0;
       padding: 0;
@@ -91,6 +77,7 @@
    
    .innerPost {
       padding-bottom: 20px;
+      /* background-size: 250%; */
    }
    
    .post img {
