@@ -45,7 +45,7 @@ export const Nav = (props) => {
                </a>
             </Link>
             |
-            <Link href="https://instagram.com/njshoreart">
+            <Link href="https://venmo.com/u/Jason-Price-5">
                <a target="_blank" rel="noopener noreferrer">
                   Venmo
                </a>
